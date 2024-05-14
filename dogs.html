@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="dogs.css">
+    </head>
+
+    <body>
+
+        <ul class="navbar">
+                <li class="navbox" id="home"><a href="home.html"   class="navbox" >Home</a></li>
+                <li class="navbox" id="stocks"><a href="stocks.html"   class="navbox">Stocks</a></li>
+                <li class="navbox" id="dogs"><a  href="dogs.html"    class="navbox" >Dogs</a></li>
+        </ul>
+
+        <h1>Doggos 🐶 </h1>
+
+        <div class="container">
+            <div class="carousel">
+                <div class="slider"></div>
+
+
+                <div class="arrows">
+                    <span class="arrow left">
+
+                        <span class="material-icons">
+                            arrow_back_ios
+                        </span>
+                      
+                    </span>
+                    <span class="arrow right">
+
+                        <span class="material-icons">
+                            arrow_forward_ios
+                        </span>
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="breed_buttons"></div>
+
+            <div class="dogInfo"></div>
+
+            <div class ="audio-instructions-box">
+
+                <h3>In this web there are option to Navigate using Audio!</h3>
+                <p>Ensure your Mic enabled to be able to use this feature</p>
+
+                <ul>
+
+                    <li> Load dog beed
+                        <ul>
+                            <li> Say: Load dog breed: (Home or Stocks) </li>
+                        </ul>
+                    </li>
+
+                    <li>Navigate to a Different Page
+                        <ul>
+                            <li> Say: Navigate to: (dogs or stocks) </li>
+                        </ul>
+                    </li>
+
+                    <li>Change the Page Color
+                        <ul>
+                            <li> Say: Change the color to: (a color of your choice)</li>
+                        </ul>
+                    </li>
+                    <li>Say Hello Back to you!
+                        <ul>
+                            <li> Say: Hello</li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+                <button class="turn" id="on">Turn On Listening</button>
+                <button class="turn1" id="isOff">Turn Off Listening </button>
+
+                
+            </div>
+        </div>
+
+
+        <script src="dog.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+
+        <script>
+            const isOn = document.getElementById("on");
+            const isOff = document.getElementById("isOff");
+            const stocks = document.getElementById("stock");
+            const dogs = document.getElementById("dog");
+            
+    
+            if (annyang) {
+            
+            const commands = {
+                'hello': () => { alert('Hello world!'); },
+    
+                'change the color to *color': (color) => { document.body.style.backgroundColor = color;},
+    
+                'navigate to *page': (page) => {window.location.href = page.toLowerCase() + '.html';},
+
+                'load dog breed *breed': function(breed){
+                    const buttonBreed = document.querySelectorAll('.breed_buttons button');
+                    console.log(buttonBreed)
+                    const breedName = breed.toLowerCase();
+                    console.log(breedName)
+
+
+                    buttonBreed.forEach(button => {
+                        if (button.textContent.toLowerCase() === breedName){
+                            button.click();
+                        }
+                    })
+                }
+    
+                
+        };
+            
+            annyang.addCommands(commands);
+        
+          }
+    
+    
+    
+    
+        isOn.onclick = function(){
+            annyang.start();
+        }
+    
+        isOff.onclick = function(){
+    
+            annyang.abort();
+    
+        }
+        </script>
+
+
+
+    </body>
+
+  
+
+
+
+</html>

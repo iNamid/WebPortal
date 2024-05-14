@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="home.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT Serif">
+    </head>
+
+    <body>
+
+        <ul class="navbar">
+                <li class="navbox" id="home"><a href="home.html"   class="navbox" >Home</a></li>
+                <li class="navbox" id="stocks"><a href="stocks.html"   class="navbox">Stocks</a></li>
+                <li class="navbox" id="dogs"><a  href="dogs.html"    class="navbox" >Dogs</a></li>
+        </ul>
+
+        <h1>These are some different activities we can try!</h1>
+    
+
+        <div class="bigcont">
+
+            <div class="cont"> 
+                <button class="button-86" id="stock"> Stocks </button>
+                <button class= "button-86" id="dog"> Dogs </button>
+
+             </div>
+
+
+            <div class="pageload">
+                <h1>Quote of the Page Load</h1>
+                <p>"<span id="quote"></span>" - </p>
+                <p id="author"></p>
+
+            </div>
+
+            <div class="audio">
+                <h3>In this web there are option to Navigate using Audio!</h3>
+                <p>Ensure your Mic enabled to be able to use this feature</p>
+
+                <ul>
+                    <li>Navigate to a Different Page
+                        <ul>
+                            <li> Say: Navigate to: (dogs or stocks) </li>
+                        </ul>
+                    </li>
+
+                    <li>Change the Page Color
+                        <ul>
+                            <li> Say: Change the color to: (a color of your choice)</li>
+                        </ul>
+                    </li>
+                    <li>Say Hello Back to you!
+                        <ul>
+                            <li> Say: Hello</li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+                <button class="turn" id="on">Turn On Listening</button>
+                <button class="turn1" id="isOff">Turn Off Listening </button>
+            </div>
+
+        </div>
+
+    </body>
+
+    <script src="home.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script>
+
+
+        const isOn = document.getElementById("on");
+        const isOff = document.getElementById("isOff");
+        const stocks = document.getElementById("stock");
+        const dogs = document.getElementById("dog");
+        
+
+        if (annyang) {
+        
+        const commands = {
+            'hello': () => { alert('Hello world!'); },
+
+            'change the color to *color': (color) => {document.body.style.backgroundColor = color;},
+
+            'navigate to *page': (page) => {window.location.href = page.toLowerCase() + '.html';}
+          
+            
+        }
+
+        annyang.addCommands(commands);
+    };
+        
+    
+    
+     
+
+    isOn.onclick = function(){
+        annyang.start();
+    }
+
+    isOff.onclick = function(){
+
+        annyang.abort();
+
+    }
+
+    stocks.onclick = function(){
+        window.location.href = 'stocks.html';
+    }
+
+    dogs.onclick = function(){
+        window.location.href = 'dogs.html';
+    }
+   
+    </script>
+
+
+
+</html>

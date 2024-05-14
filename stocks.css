@@ -1,0 +1,168 @@
+.navbar{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    border-radius: 12px;
+    border: 1px solid;
+    background-color: cornsilk;
+    padding: 5px;
+    
+   
+
+}
+
+.navbox{
+
+    text-decoration: none;
+    list-style-type: none;
+    padding: 10px 30px;
+    color: black;
+    border-radius: 20px;
+    
+}
+
+.navbox:hover{
+
+    background-color: rgba(152, 152, 152, 0.569);
+}
+
+
+#table {
+    
+    border-collapse: collapse;
+    margin: 20px;
+    border-radius: 15px 15px 15px 15px;
+    overflow: hidden;
+   
+}
+
+#table thead tr{
+    border-radius: 20px 15px 0 0;
+    background-color: rgba(87, 71, 71, 0.308);;
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 15px;
+    
+}
+
+#table th, 
+#table td {
+    padding: 20px;
+    
+
+}
+
+#table tbody tr:nth-of-type(even){
+    background-color: rgba(69, 73, 63, 0.726);;
+}
+
+#table tbody tr:last-of-type{
+    border-bottom: 5px solid ;
+}
+
+body{
+    font-family: PT Serif;
+}
+
+
+.container{
+    display: flex;
+    
+}
+
+.mytable{
+    float: right;
+    margin-right: 70px;
+
+
+}
+
+.mychart{
+
+    float: left;
+    
+}
+
+.search{
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 15px;
+    background-color: hsla(226, 75%, 58%, 0.414);
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 50px;
+    
+}
+
+.cont{
+    display: grid;
+    place-items: center;
+}
+
+body{
+    background-color: rgb(246, 240, 240);
+    font-family: PT Serif;
+}
+
+#sub{
+    border-radius: 10px;
+}
+
+input{
+    border-radius: 10px;
+}
+
+select{
+    border-radius: 10px;
+}
+
+#sub:hover{
+    background-color: hsla(89, 28%, 55%, 0.518);
+}
+
+.cont{
+     display: grid;
+    place-items: center
+}
+
+
+.audio{
+    border: 2px solid;
+    padding: 30px;
+    background-color: hsla(37, 72%, 77%, 0.654);
+
+}
+
+.audio-content{
+    display: grid;
+    place-items: center;
+    margin-bottom: 50px;
+}
+
+
+.turn{
+    border: 2px solid;
+    border-radius: 20px;
+    display: inline-block;
+    padding: 10px 55px;
+   
+
+}
+
+.turn:hover{
+    background-color: rgba(33, 104, 3, 0.555);
+}
+
+.turn1{
+    border: 2px solid;
+    border-radius: 20px;
+    display: inline-block;
+    padding: 10px 55px;
+    margin-left: 40px;
+    
+}
+
+.turn1:hover{
+    background-color: rgba(216, 0, 0, 0.645);
+}
